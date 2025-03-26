@@ -90,7 +90,15 @@ public class Main {
         System.out.print("Enter your password: ");
         String password = scanner.nextLine();
         User user = authService.signUp(username, password);
-        // TODO Later: Shows a message based on the result
+        // TODO Now: Show a message based on the result of the signUp method:
+        // - If the user is not null, show "User <username> has been created successfully!"
+        // - If the user is null, show "The username is already taken!"
+        if (user != null) {
+            System.out.println("User " + user.getUsername() " has been created succesfully!");
+        }
+        else {
+            System.out.println("The username is already taken!");
+        }
     }
 
     /**
